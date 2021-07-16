@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+  width: 1170px;
+  margin: auto;
+}
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/d1YKRVpQ/ekip-to-chuc-su-kien-va-phan-chia-cong-viec.jpg);
+  height: 100vh;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+
+.logo {
+  float: left;
+}
+
+
+.logo img {
+  width: 100%;
+  padding: 15px 0;
+}
+
+
+.welcome-text {
+  position: absolute;
+  width: 600px;
+  height: 100px;
+  margin: 20% 30%;
+  text-align: center;
+
+}
+.welcome-text h1 {
+  color: #191970;
+  text-transform: uppercase;
+  font-size: 80px;
+}
+/*.welcome-text h1 span {*/
+/*  !*color: #00fecb;*!*/
+/*  color: #191970;*/
+/*}*/
+.welcome-text a {
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 20px;
+  display: inline-block;
+  color: #fff;
+}
+.welcome-text a:hover {
+  background: #fff;
+  color: #333;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-family: baloo;
+  margin: 0;
+  font-size: 100px;
+  color: #ffffff;
+  line-height: normal;
+}
+
+.button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.btn {
+  margin: 5px ;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  padding: 10px 30px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.6s ease;
+}
+
+.btn:hover {
+  border: 1px solid #191930;
+  background-color: #191930;
+  color: #fff;
+}
+

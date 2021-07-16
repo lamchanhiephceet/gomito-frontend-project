@@ -1,0 +1,26 @@
+.view-atm{
+  width: 500px;
+  background-size: cover;
+  border: 1px #ededf0 solid;
+  margin: 10px 5px;
+}
+
+.view-image{
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+}
+
+.attachment-content {
+  margin: 5px 20px;
+}
+
+.temp {
+  border: 1px solid #C2BAC8;
+  height: 100px;
+  width: 100px;
+  background-color: darkgrey;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}

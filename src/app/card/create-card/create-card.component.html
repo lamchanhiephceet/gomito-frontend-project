@@ -1,0 +1,8 @@
+<mat-form-field appearance="standard">
+  <mat-label>Card name: </mat-label>
+  <input matInput placeholder="Card Name" [(ngModel)]="data.cardName">
+  <mat-icon matSuffix>assignment</mat-icon>
+</mat-form-field>
+<div fxLayoutAlign="flex-end">
+  <button mat-raised-button color="primary" [mat-dialog-close]="data">Create</button>
+</div>

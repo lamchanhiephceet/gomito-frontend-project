@@ -1,0 +1,17 @@
+<div>
+  <div fxLayoutAlign="column">
+    <h4>Attach Form...</h4>
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+    <input type="file" id="avatar" formControlName="avatar" #fileUpLoader (change)="showPreview($event)">
+    <br/>
+    <div class="btn-update">
+      <button mat-raised-button [mat-dialog-close]="data.attach" [disabled]="!updated" (click)="updateSuccess()">Update</button>
+    </div>
+    <br/>
+  </div>
+  <mat-divider></mat-divider>
+  <div>Tip:Tip: With Power-Ups, you can attach conversations from Slack, pull requests from GitHub, and leads from Salesforce.</div>
+</div>
+

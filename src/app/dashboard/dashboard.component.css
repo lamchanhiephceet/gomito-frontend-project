@@ -1,0 +1,58 @@
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+/*mat-drawer-container {*/
+/*  background-color: #FAFBFC;*/
+/*}*/
+
+
+.profile-card {
+  text-align: center;
+  padding: 5px;
+}
+
+.profile-card>img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: lightslategrey;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+mat-drawer {
+  width: 350px;
+  padding: 15px 20px 0 15px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer-content {
+  padding: 20px;
+}
+
+::ng-deep snack-bar-container.custom-class {
+  background-color: #FAFBFC;
+  color: midnightblue;
+  height: 80px;
+  width: 150px;
+  padding-top: 18px;
+}
+
+.user-name {
+  margin: 0;
+}

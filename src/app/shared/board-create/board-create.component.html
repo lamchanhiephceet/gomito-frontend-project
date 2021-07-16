@@ -1,0 +1,11 @@
+<mat-form-field appearance="standard">
+  <mat-label>Board name: </mat-label>
+  <input matInput placeholder="Placeholder" [(ngModel)]="boardName">
+  <mat-icon matSuffix>assignment</mat-icon>
+</mat-form-field>
+<mat-form-field appearance="standard">
+  <mat-label>Description: </mat-label>
+  <textarea matInput rows="2"></textarea>
+</mat-form-field>
+<div fxLayoutAlign="flex-end"><button mat-raised-button color="primary" (click)="createBoard()">Create</button></div>
+

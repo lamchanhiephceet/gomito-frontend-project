@@ -1,0 +1,8 @@
+<mat-form-field appearance="standard">
+  <p>Delete Comment?</p>
+  <mat-divider></mat-divider>
+  <div fxLayoutAlign="flex-end">
+    <p>Deleting a comment is forever. There is no undo.</p>
+    <button mat-raised-button color="primary" [mat-dialog-close]="data.commentId">Delete</button>
+  </div>
+</mat-form-field>

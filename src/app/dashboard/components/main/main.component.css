@@ -1,0 +1,21 @@
+mat-list {
+  margin: 0 10px 20px 5px;
+}
+
+mat-list-item {
+  float: left;
+}
+
+mat-card {
+  width: 200px;
+  height: 80px;
+  background-color: darkblue;
+  opacity: 75%;
+  color: #FAFBFC;
+  margin-bottom: 15px;
+}
+
+mat-card {
+  float: left;
+  margin: 5px 10px;
+}

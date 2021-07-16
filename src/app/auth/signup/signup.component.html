@@ -1,0 +1,39 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <br/>
+    <span *ngIf="message">{{message}}</span>
+
+    <form class="example-form" [formGroup]="signupForm" (ngSubmit)="signup()">
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username" [formControlName]="'username'" name="username">
+        </mat-form-field>
+        <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+          Username must have 4-50 characters!
+        </span>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [formControlName]="'email'" name="email">
+        </mat-form-field>
+        <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+          Email not valid!
+        </span>
+
+        <mat-form-field class="example-full-width">
+          <input type="password" matInput placeholder="Password" [formControlName]="'password'" name="password">
+        </mat-form-field>
+        <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+          Password must have 6-50 characters!
+        </span>
+
+      </mat-card-content>
+
+      <button mat-stroked-button color="primary" class="btn-block" type="submit">Register</button>
+
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,89 @@
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [rowspan]="1" [colspan]="3">
+    <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="Title" [(ngModel)]="data.card.cardName">
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile [rowspan]="3" [colspan]="1">
+    <div fxLayout="column" class="side-tool">
+      <button mat-raised-button color="primary" (click)="addAttachment()" class="add-item">Attachment</button>
+      <!--    Danh sách label để thêm vào card trong viewcard-->
+      <button mat-raised-button [matMenuTriggerFor]="menu" color="primary" class="add-item">Label</button>
+      <mat-menu #menu="matMenu">
+        <tr *ngFor="let label of data.labels">
+          <mat-button-toggle (click)="addLabelToCard(label)"
+                             class="choose-label" [style]="{'background':label.color}">{{label.labelName}}</mat-button-toggle>
+        </tr>
+      </mat-menu>
+      <button mat-raised-button color="primary" [mat-dialog-close]="data.card" class="add-item">Update</button>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [rowspan]="1" [colspan]="1">
+    <div *ngFor="let mem of members">
+      <img *ngIf="mem.avatarUrl != null; else elseBlock" src="{{mem.avatarUrl}}" class="member-avatar">
+      <ng-template #elseBlock>
+        <button mat-mini-fab class="member">{{mem.username.charAt(0).toUpperCase()}}</button>
+      </ng-template>
+    </div>
+    <button mat-mini-fab class="member" [matMenuTriggerFor]="addMember">
+      <mat-icon>person_add</mat-icon>
+    </button>
+    <mat-menu #addMember="matMenu">
+      <div fxLayout="column">
+        <button mat-button *ngFor="let member of data.members" class="add-member-button"
+                (click)="addMemberToCard(member)">
+          <img *ngIf="member.avatarUrl != null; else elseBlock" src="{{member.avatarUrl}}" class="member-avatar">
+          <ng-template #elseBlock>
+            <button mat-mini-fab class="member-avatar">{{member.username.charAt(0).toUpperCase()}}</button>
+          </ng-template>
+          {{member.username}}
+        </button>
+      </div>
+    </mat-menu>
+  </mat-grid-tile>
+
+  <mat-grid-tile [rowspan]="1" [colspan]="2" fxLayoutAlign="flex-start">
+    <div class="show-label">
+      <div class="labels"
+                         *ngFor="let label of data.card.labels" [style]="{'background':label.color}">{{label.labelName}}</div>
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [rowspan]="1" [colspan]="3">
+    <mat-form-field class="description">
+      <label>
+        <textarea matInput type="text" placeholder="Description" [(ngModel)]="data.card.description"></textarea>
+      </label>
+    </mat-form-field>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div >
+  <app-view-attachment  [items]="attachments" [cardId]="cardId"></app-view-attachment>
+</div>
+
+<div>
+<!--  <div>-->
+<!--    <img *ngIf="guser.avatarUrl != null; else elseBlock" src="{{guser.avatarUrl}}" class="member-avatar-ctm">-->
+<!--    <ng-template #elseBlock>-->
+<!--      <button mat-mini-fab class="member-avatar-ctm">{{guser.username.charAt(0).toUpperCase()}}</button>-->
+<!--    </ng-template>-->
+<!--  </div>-->
+  <mat-form-field class="add-comment" appearance="outline">
+    <mat-label>Add new comment</mat-label>
+    <div>
+      <textarea matInput type="text" placeholder="Comment" [(ngModel)]="newComment"></textarea>
+    </div>
+    <div class="btn-block">
+      <button mat-raised-button color="primary" [disabled]="!newComment" (click)="createComment(newComment)">Save</button>
+    </div>
+  </mat-form-field>
+</div>
+<div>
+  <app-view-comment [items]="comments"></app-view-comment>
+</div>
+
+

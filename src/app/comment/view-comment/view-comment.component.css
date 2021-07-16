@@ -1,0 +1,39 @@
+.view-atm{
+  width: 50px;
+}
+
+.comment-view {
+  width: 500px;
+  margin-bottom: 15px;
+  text-overflow: clip;
+  word-wrap: break-word;
+}
+
+p {
+  width: 450px;
+}
+
+.member {
+  background-color: #C2BAC8;
+  font-size: 17px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  justify-content: center;
+  display: table-cell;
+  object-fit: cover;
+  padding: 0;
+}
+
+.member-avatar {
+  background-color: #C2BAC8;
+  font-size: 10px;
+  color: #FAFBFC;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+

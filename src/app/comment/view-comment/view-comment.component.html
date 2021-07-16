@@ -1,0 +1,17 @@
+<div *ngFor="let item of items" class="comment-view">
+  <div>
+    <img *ngIf="item.user.avatarUrl != null; else elseBlock" src="{{item.user.avatarUrl}}" class="member-avatar">
+    <ng-template #elseBlock>
+      <button mat-mini-fab class="member">{{item.user.username.charAt(0).toUpperCase()}}</button>
+    </ng-template>
+  </div>
+  <mat-card  class="example-card" fxLayout="row">
+    <div fxLayout="column">
+      <mat-card-content class="comment-view">
+        <p>{{item.content}}</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+
+</div>
+

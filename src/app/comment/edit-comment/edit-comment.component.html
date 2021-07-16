@@ -1,0 +1,9 @@
+<mat-form-field appearance="standard">
+  <mat-label>Edit Name: </mat-label>
+  <label>
+    <textarea matInput placeholder="Name" [(ngModel)]="data.content"></textarea>
+  </label>
+  <mat-icon matSuffix>assignment</mat-icon>
+</mat-form-field>
+<div fxLayoutAlign="flex-end"><button mat-raised-button color="primary" [mat-dialog-close]="data">Update</button></div>
+

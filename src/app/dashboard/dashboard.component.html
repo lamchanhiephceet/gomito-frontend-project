@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <mat-nav-list>
+      <div class="profile-card">
+        <img *ngIf="imgSrc != null; else elseBlock" [src]="imgSrc" alt="" (click)="fileUpLoader.click()"/>
+        <ng-template #elseBlock>
+          <button mat-fab class="avatar" (click)="fileUpLoader.click()">{{username.charAt(0).toUpperCase()}}</button>
+        </ng-template>
+        <input type="file" id="avatar" formControlName="avatar" #fileUpLoader (change)="showPreview($event)" hidden>
+        <div>
+          <h2 class="user-name">{{username}}</h2>
+          <h4 class="user-email">{{email}}</h4>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <h2 matSubheader>Personal</h2>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+        <mat-icon>assignment</mat-icon>
+        Boards
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+        <mat-icon>person</mat-icon>
+        Templates
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+        <mat-icon>person</mat-icon>
+        Profile
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <h2 matSubheader>Teams</h2>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>groups</mat-icon>
+        C0502K1
+      </a>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>groups</mat-icon>
+        Gomito Team
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

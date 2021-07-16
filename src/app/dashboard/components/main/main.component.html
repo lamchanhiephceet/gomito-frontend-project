@@ -1,0 +1,21 @@
+<mat-list fxLayout="column">
+  <div mat-subheader>Personal Boards</div>
+  <div class="show-boards">
+    <mat-card *ngFor="let board of gboards" (click)="navigateToList(board.boardId)">{{board.boardName}}</mat-card>
+  </div>
+  <div mat-subheader>C0502K1 Boards</div>
+  <div class="show-boards">
+    <mat-card>Board 1</mat-card>
+    <mat-card>Board 1</mat-card>
+    <mat-card>Board 1</mat-card>
+    <mat-card>Board 1</mat-card>
+  </div>
+
+  <div mat-subheader>Gomito Team Boards</div>
+  <div class="show-boards">
+    <mat-card>Board 1</mat-card>
+    <mat-card>Board 1</mat-card>
+    <mat-card>Board 1</mat-card>
+  </div>
+</mat-list>
+

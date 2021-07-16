@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="brand-name" (click)="toDashboard()" [textContent]="'GOMITO '"></span>
+
+    <mat-form-field appearance="outline" fxFlex="225px">
+      <mat-icon matPrefix>search</mat-icon>
+
+      <input matInput placeholder="Search"
+             class="search" name="searchText" [(ngModel)]="search" [matMenuTriggerFor]="menus"
+             (input)="searchCard(search)">
+
+      <mat-menu #menus="matMenu">
+        <div class="search-menu" (click)="stopPropagation($event)">
+          <div *ngFor="let result of cards" class="card-result" fxLayout="row">
+            <mat-card (click)="viewCard(result)" class="result-name">{{result.cardName}}</mat-card>
+            <div class="result-description">
+              {{result.description}}
+            </div>
+          </div>
+        </div>
+      </mat-menu>
+
+    </mat-form-field>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <ul fxLayout="row">
+        <li>
+          <button mat-icon-button>
+            <mat-icon (click)="openCreateForm()">add_circle</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button [matMenuTriggerFor]="notification"><mat-icon matBadge="{{unread}}" matBadgeColor="warn"
+                                            (click)="toggleBadgeVisibility()">notifications</mat-icon></button>
+          <mat-menu #notification="matMenu">
+            <mat-card *ngFor="let notification of notifications" class="show-notification"
+                      [ngStyle]="{'background-color': notification.status === 1 ? '#C2BAC8' : '#F5F6F7'}">
+              <span>{{notification.message}}</span>
+            </mat-card>
+          </mat-menu>
+        </li>
+        <li>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="changePw()">
+              <mat-icon>lock</mat-icon>
+              Change password
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              Sign out
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
