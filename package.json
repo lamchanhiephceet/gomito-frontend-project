@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
+    "start": "node server.js",
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start": "http-server-spa dist/angular-frontend-project index.html $PORT"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.6",
     "@angular/cdk": "^10.2.7",
+    "@angular/cli": "~10.1.7",
     "@angular/common": "~10.1.6",
     "@angular/compiler": "~10.1.6",
+    "@angular/compiler-cli": "~10.1.6",
     "@angular/core": "~10.1.6",
     "@angular/fire": "^6.0.4",
     "@angular/flex-layout": "^10.0.0-beta.32",
@@ -23,15 +26,18 @@
     "@angular/platform-browser": "~10.1.6",
     "@angular/platform-browser-dynamic": "~10.1.6",
     "@angular/router": "~10.1.6",
+    "express": "^4.17.1",
     "firebase": "^8.0.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.5.1",
     "net": "^1.0.2",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "sockjs-client": "^1.5.0",
     "stompjs": "^2.3.3",
     "tslib": "^2.0.0",
+    "typescript": "~4.0.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -54,5 +60,9 @@
     "tslint": "~6.1.0",
     "typescript": "~4.0.2",
     "ngx-webstorage": "5.0.0"
+  },
+  "engines": {
+    "node": "12.18.2",
+    "npm": "6.14.5"
   }
 }
