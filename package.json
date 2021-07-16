@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "http-server-spa dist/angular-frontend-project index.html $PORT"
   },
   "private": true,
   "dependencies": {
@@ -54,14 +54,5 @@
     "tslint": "~6.1.0",
     "typescript": "~4.0.2",
     "ngx-webstorage": "5.0.0"
-  },
-
-  "scripts": {
-    "ng": "ng",
-    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start": "http-server-spa dist/gomito-frontend-project index.html $PORT"
   }
 }
