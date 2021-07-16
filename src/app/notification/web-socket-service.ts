@@ -2,12 +2,14 @@ import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebSocketService {
-  webSocketEndPoint = 'http://localhost:8080/notifications';
+  baseUrl = environment.baseUrl;
+  webSocketEndPoint = this.baseUrl + 'notifications';
   topic = '/topic/notify/';
   stompClient: any;
   fromUser;

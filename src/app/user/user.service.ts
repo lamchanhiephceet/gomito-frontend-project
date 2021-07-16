@@ -2,27 +2,28 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {GUser} from './GUser';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
+  baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getUserInfo(): Observable<GUser> {
-    return this.http.get<GUser>('http://localhost:8080/api/users');
+    return this.http.get<GUser>(this.baseUrl + 'api/users');
   }
 
   getAllMembers(boardId: number): Observable<GUser[]> {
-    return this.http.get<GUser[]>('http://localhost:8080/api/boards/' + boardId + '/get-members');
+    return this.http.get<GUser[]>(this.baseUrl + 'api/boards/' + boardId + '/get-members');
   }
 
   inviteMember(member: GUser, boardId: number): Observable<any> {
-    return this.http.post('http://localhost:8080/api/boards/' + boardId + '/add-member', member);
+    return this.http.post(this.baseUrl + 'api/boards/' + boardId + '/add-member', member);
   }
 
   updateUserAvatar(user: GUser): Observable<GUser> {
-    return this.http.put<GUser>('http://localhost:8080/api/users/updateAvatar', user);
+    return this.http.put<GUser>(this.baseUrl + 'api/users/updateAvatar', user);
   }
 }

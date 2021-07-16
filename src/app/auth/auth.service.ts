@@ -8,12 +8,14 @@ import {LoginResponse} from './login/login-respponse';
 import {LocalStorageService} from 'ngx-webstorage';
 import {tap} from 'rxjs/operators';
 import {RefreshTokenRequest} from './refresh-token-request';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
+  baseUrl = environment.baseUrl;
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
     username: this.getUserName()
@@ -23,21 +25,21 @@ export class AuthService {
               private localStorage: LocalStorageService) { }
 
   signup(signupRequest: SignupRequest): Observable<any> {
-    return this.http.post('http://localhost:8080/auth/signup', signupRequest,
+    return this.http.post(this.baseUrl + 'auth/signup', signupRequest,
       {responseType: 'text'});
   }
 
   login(loginRequest: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>('http://localhost:8080/auth/login', loginRequest);
+    return this.http.post<LoginResponse>(this.baseUrl + 'auth/login', loginRequest);
   }
 
   // @ts-ignore
   verifyToken(token: string): Observable<any> {
-    return this.http.get('http://localhost:8080/auth/accountVerification/' + token);
+    return this.http.get(this.baseUrl + 'auth/accountVerification/' + token);
   }
 
   addMemberVerifyToken(token: string): Observable<any>{
-    return this.http.get('http://localhost:8080/api/users/join/' + token);
+    return this.http.get(this.baseUrl + 'api/users/join/' + token);
   }
 
   // tslint:disable-next-line:typedef
@@ -47,7 +49,7 @@ export class AuthService {
 
   // tslint:disable-next-line:typedef
   refreshToken() {
-    return this.http.post<LoginResponse>('http://localhost:8080/auth/refresh/token',
+    return this.http.post<LoginResponse>(this.baseUrl + 'auth/refresh/token',
       this.refreshToken())
       .pipe(tap(response => {
         this.localStorage.clear('authenticationToken');
@@ -60,7 +62,7 @@ export class AuthService {
   // tslint:disable-next-line:typedef
   changePassword(changePwRequest: ChangePasswordRequest): Observable<any> {
     console.log(changePwRequest);
-    return this.http.post('http://localhost:8080/api/users/change-password', changePwRequest);
+    return this.http.post(this.baseUrl + 'api/users/change-password', changePwRequest);
   }
   // tslint:disable-next-line:typedef
   getUserName() {
@@ -78,6 +80,6 @@ export class AuthService {
       refreshToken: this.localStorage.retrieve('refreshToken')
     };
     console.log(logoutReq);
-    return this.http.post('http://localhost:8080/auth/logout', logoutReq);
+    return this.http.post(this.baseUrl + 'auth/logout', logoutReq);
   }
 }
