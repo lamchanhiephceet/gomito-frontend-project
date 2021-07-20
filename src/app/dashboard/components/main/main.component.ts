@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
-import {GBoard} from "../../../gboard";
-import {LocalStorageService} from "ngx-webstorage";
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {GBoard} from '../../../gboard';
+import {LocalStorageService} from 'ngx-webstorage';
 import {BoardService} from '../../../board/board.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
     this.getBoard();
   }
 
+  // tslint:disable-next-line:typedef
   private getBoard(){
     // @ts-ignore
     this.listBoardService.getBoardList().subscribe(data => {
@@ -28,7 +29,8 @@ export class MainComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   navigateToList(boardId: number){
-    this.router.navigateByUrl("/board/" + boardId);
+    this.router.navigateByUrl('/board/' + boardId);
   }
 }
