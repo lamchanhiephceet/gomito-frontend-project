@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   signupRequest: SignupRequest;
   signupForm: FormGroup;
   message: string;
-  //Vừa thêm để chuyển hướng khi gửi mail thành công
+  // Vừa thêm để chuyển hướng khi gửi mail thành công
   private token: string;
 
   constructor(private authService: AuthService,
