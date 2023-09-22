@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import {BoardModel} from '../shared/board-create/board-model';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
 import {Observable} from 'rxjs';
 import {Route, Router} from '@angular/router';
-import {GBoard} from '../gboard';
+import {GBoard} from '../models/gboard';
 import {environment} from '../../environments/environment';
 
 @Injectable({
@@ -31,5 +30,16 @@ export class BoardService {
 
   getBoardInfo(boardId: number): Observable<GBoard> {
     return this.httpClient.get<GBoard>(this.baseUrl + 'api/boards/' + boardId + '/getInfo');
+  }
+
+  downLoadFile(): Observable<HttpResponse<any>> {
+    return this.httpClient.get(this.baseUrl + 'api/boards/excel', {
+      responseType: 'blob', observe: 'response'
+    });
+  }
+
+  getAllExcelData(): Observable<HttpResponse<any>> {
+    // const id = this.localStorage.retrieve('userId');
+    return this.httpClient.get(this.baseUrl + 'api/boards/excel-info', {observe: 'response'});
   }
 }

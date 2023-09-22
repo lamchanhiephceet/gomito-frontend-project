@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {CommentService} from '../comment.service';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Comment} from '../../comment';
+import {Comment} from '../../models/comment';
 
 @Component({
   selector: 'app-edit-comment',

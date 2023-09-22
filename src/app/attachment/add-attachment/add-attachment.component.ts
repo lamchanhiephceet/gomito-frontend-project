@@ -2,7 +2,7 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import {AttachmentService} from '../service/attachment.service';
 import {finalize} from 'rxjs/operators';
 import {AngularFireStorage} from '@angular/fire/storage';
-import {Attachment} from '../../attachment';
+import {Attachment} from '../../models/attachment';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({

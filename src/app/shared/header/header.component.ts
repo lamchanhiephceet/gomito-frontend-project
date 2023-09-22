@@ -5,7 +5,7 @@ import {AuthService} from '../../auth/auth.service';
 import {throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {LocalStorageService} from 'ngx-webstorage';
-import {GCard} from '../../gCard';
+import {GCard} from '../../models/gCard';
 import {CardService} from '../../card/card.service';
 import {WebSocketService} from '../../notification/web-socket-service';
 import {MatSnackBar} from '@angular/material/snack-bar';

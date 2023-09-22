@@ -1,4 +1,4 @@
- {
+{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "Gomito-frontend"
+  "defaultProject": "Gomito-frontend",
+  "cli": {
+    "analytics": "4caf8372-285c-49c3-89b3-3dca38614889"
+  }
 }

@@ -30,7 +30,7 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
 import {NgxWebstorageModule} from 'ngx-webstorage';
-import {TokenInterceptor} from './token-interceptor';
+import {TokenInterceptor} from './models/token-interceptor';
 import {ListUpdateComponent} from './list/list-update/list-update.component';
 import {CreatListComponent} from './list/creat-list/creat-list.component';
 import {CreateCardComponent} from './card/create-card/create-card.component';
@@ -57,6 +57,12 @@ import { HomeComponent } from './home/home.component';
 import { AddMemberVerifyTokenComponent } from './add-member-verify-token/add-member-verify-token.component';
 // import { GBoardComponent } from './gboard/gboard.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import {UserUpdateComponent} from './user/user-update/user-update.component';
+import { ExcelReportComponent } from './excel-report/excel-report.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -83,6 +89,9 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     NotificationComponent,
     HomeComponent,
     AddMemberVerifyTokenComponent,
+    UserUpdateComponent,
+    UserDetailComponent,
+    ExcelReportComponent
     // GBoardComponent
   ],
   imports: [
@@ -115,7 +124,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatGridListModule,
     MatSnackBarModule,
     MatButtonToggleModule,
-    ScrollingModule
+    ScrollingModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule
   ],
   // providers: [],
   providers: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {GBoard} from '../../../gboard';
+import {GBoard} from '../../../models/gboard';
 import {LocalStorageService} from 'ngx-webstorage';
 import {BoardService} from '../../../board/board.service';
 

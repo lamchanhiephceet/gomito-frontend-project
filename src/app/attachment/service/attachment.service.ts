@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Attachment} from '../../attachment';
+import {Attachment} from '../../models/attachment';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {environment} from '../../../environments/environment';

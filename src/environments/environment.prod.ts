@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   baseUrl: 'https://gomito-backend-project.herokuapp.com/',
   firebaseConfig: {
     apiKey: 'AIzaSyAlKapmblQ0SQaR9vsysVX7N2050rephnY',

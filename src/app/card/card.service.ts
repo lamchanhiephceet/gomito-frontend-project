@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {GCard} from '../gCard';
+import {GCard} from '../models/gCard';
 import {Observable} from 'rxjs';
 import {GUser} from '../user/GUser';
 import {environment} from '../../environments/environment';

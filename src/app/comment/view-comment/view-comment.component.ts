@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {CommentService} from '../comment.service';
 import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
-import {Comment} from '../../comment';
+import {Comment} from '../../models/comment';
 import {DeleteCommentComponent} from '../delete-comment/delete-comment.component';
 import {EditCommentComponent} from '../edit-comment/edit-comment.component';
 import {throwError} from 'rxjs';

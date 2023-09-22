@@ -9,7 +9,10 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {LoginComponent} from './auth/login/login.component';
 import {AuthGuardGuard} from './guard/auth-guard.guard';
 import {HomeComponent} from './home/home.component';
-import {AddMemberVerifyTokenComponent} from "./add-member-verify-token/add-member-verify-token.component";
+import {AddMemberVerifyTokenComponent} from './add-member-verify-token/add-member-verify-token.component';
+import {UserDetailComponent} from './user/user-detail/user-detail.component';
+import {UserUpdateComponent} from './user/user-update/user-update.component';
+import {ExcelReportComponent} from './excel-report/excel-report.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -25,7 +28,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'reset-password', component: ResetPasswordComponent, canActivate: [AuthGuardGuard]},
   {path: 'redirect', redirectTo: 'dashboard' , pathMatch: 'full', canActivate: [AuthGuardGuard]},
-  {path: 'add-member-verify-token/:token', component: AddMemberVerifyTokenComponent}
+  {path: 'add-member-verify-token/:token', component: AddMemberVerifyTokenComponent},
+  {path: 'user-detail', component: UserDetailComponent},
+  {path: 'user-update', component: UserUpdateComponent},
+  {path: 'excel-report', component: ExcelReportComponent}
+
 ];
 
 @NgModule({

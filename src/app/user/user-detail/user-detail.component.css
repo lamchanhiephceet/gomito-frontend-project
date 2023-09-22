@@ -1,0 +1,17 @@
+.profile-card {
+  text-align: center;
+  padding: 5px;
+}
+
+.profile-card>img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  background-color: lightslategrey;
+  font-size: 40px;
+  font-weight: bold;
+}
+

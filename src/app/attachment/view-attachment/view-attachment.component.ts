@@ -3,7 +3,7 @@ import {AttachmentService} from '../service/attachment.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DeleteAttachmentComponent} from '../delete-attachment/delete-attachment.component';
 import {EditAttachmentComponent} from '../edit-attachment/edit-attachment.component';
-import {Attachment} from '../../attachment';
+import {Attachment} from '../../models/attachment';
 import {throwError} from 'rxjs';
 
 

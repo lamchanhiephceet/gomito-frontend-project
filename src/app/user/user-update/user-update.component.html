@@ -1,0 +1,45 @@
+<section class="container-xl mt-100 mb-5">
+  <div>
+    <h3 style="color: firebrick" align="center">Update User</h3>
+  </div>
+  <div class="profile-card">
+    <img *ngIf="user.avatarUrl != null; else elseBlock" [src]="user.avatarUrl" alt="" (click)="fileUpLoader.click()"/>
+    <ng-template #elseBlock>
+      <button mat-fab class="avatar" (click)="fileUpLoader.click()">{{user.username.charAt(0).toUpperCase()}}</button>
+    </ng-template>
+    <input type="file" id="avatar" formControlName="avatar" #fileUpLoader (change)="showPreview($event)" hidden>
+  </div>
+  <div class="col-md-8 offset-md-2">
+  <form method="post" enctype="multipart/form-data" (ngSubmit)="updateUser()">
+    <input hidden type="text" name="id">
+    <div class="form-group">
+      <label for="first name">First Name</label>
+      <input class="form-control" type="text" name="first name" id="first name" [(ngModel)]="user.firstName"/>
+      <p style="color: firebrick"></p>
+    </div>
+    <div class="form-group">
+      <label for="last name">Last Name</label>
+      <input class="form-control" type="text" name="last name" id="last name" [(ngModel)]="user.lastName"/>
+      <p style="color: firebrick"></p>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input class="form-control" type="text" name="address" id="address" [(ngModel)]="user.address"/>
+      <p style="color: firebrick"></p>
+    </div>
+    <div class="form-group">
+      <label for="about account">About Account</label>
+      <input class="form-control" type="text" name="author" id="about account" [(ngModel)]="user.accountInfo"/>
+      <p style="color: firebrick"></p>
+    </div>
+    <div class="row">
+      <div class="col-md-3 offset-md-3" >
+        <input class="btn btn-success mr-3" type="submit" value="Save">
+      </div>
+      <div class="col-md-3 offset-md-3">
+        <a class="btn btn-info" routerLink="/dashboard">Back</a>
+      </div>
+    </div>
+  </form>
+  </div>
+</section>

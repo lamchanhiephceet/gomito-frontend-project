@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Glabel} from '../glabel';
+import {Glabel} from '../models/glabel';
 import {environment} from '../../environments/environment';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ListModel} from '../list-model';
+import {ListModel} from '../models/list-model';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {LocalStorageService} from 'ngx-webstorage';

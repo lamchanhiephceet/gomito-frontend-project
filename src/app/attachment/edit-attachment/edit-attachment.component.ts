@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Attachment} from '../../attachment';
+import {Attachment} from '../../models/attachment';
 
 @Component({
   selector: 'app-edit-attachment',

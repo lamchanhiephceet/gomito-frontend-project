@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {CommentService} from '../comment.service';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Attachment} from '../../attachment';
-import {Comment} from '../../comment';
+import {Attachment} from '../../models/attachment';
+import {Comment} from '../../models/comment';
 
 @Component({
   selector: 'app-delete-comment',

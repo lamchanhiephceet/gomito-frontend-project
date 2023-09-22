@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {BoardService} from '../../board/board.service';
 import {Router} from '@angular/router';
-import {GBoard} from '../../gboard';
+import {GBoard} from '../../models/gboard';
 
 @Component({
   selector: 'app-board-create',

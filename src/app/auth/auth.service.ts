@@ -25,17 +25,16 @@ export class AuthService {
               private localStorage: LocalStorageService) { }
 
   signup(signupRequest: SignupRequest): Observable<any> {
-    return this.http.post(this.baseUrl + 'auth/signup', signupRequest,
+    return this.http.post(this.baseUrl + 'api/auth/signup', signupRequest,
       {responseType: 'text'});
   }
 
   login(loginRequest: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(this.baseUrl + 'auth/login', loginRequest);
+    return this.http.post<LoginResponse>(this.baseUrl + 'api/auth/login', loginRequest);
   }
 
-  // @ts-ignore
   verifyToken(token: string): Observable<any> {
-    return this.http.get(this.baseUrl + 'auth/accountVerification/' + token);
+    return this.http.get(this.baseUrl + 'api/auth/accountVerification/' + token);
   }
 
   addMemberVerifyToken(token: string): Observable<any>{
@@ -49,7 +48,7 @@ export class AuthService {
 
   // tslint:disable-next-line:typedef
   refreshToken() {
-    return this.http.post<LoginResponse>(this.baseUrl + 'auth/refresh/token',
+    return this.http.post<LoginResponse>(this.baseUrl + 'api/auth/refresh/token',
       this.refreshToken())
       .pipe(tap(response => {
         this.localStorage.clear('authenticationToken');
@@ -80,6 +79,6 @@ export class AuthService {
       refreshToken: this.localStorage.retrieve('refreshToken')
     };
     console.log(logoutReq);
-    return this.http.post(this.baseUrl + 'auth/logout', logoutReq);
+    return this.http.post(this.baseUrl + 'api/auth/logout', logoutReq);
   }
 }
