@@ -18,7 +18,7 @@ export class ExcelReportComponent implements OnInit {
   constructor(private boardService: BoardService){ }
   isShowTbl = false;
   isShowNotFound = false;
-  displayedColumns = ['STT', 'BoardName', 'ListName', 'CardName', 'FirstName', 'LastName', 'Email', 'AboutAccount'];
+  displayedColumns = ['STT', 'BoardName', 'ListName', 'CardName', 'FirstName', 'Email', 'AboutAccount'];
   dataSource: MatTableDataSource<ExcelReport> = new MatTableDataSource<ExcelReport>();
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;

@@ -4,6 +4,7 @@ export interface ExcelReport {
   cardName: string;
   firstName: string;
   lastName: string;
+  username: string;
   email: string;
   accountInfo: string;
 }
