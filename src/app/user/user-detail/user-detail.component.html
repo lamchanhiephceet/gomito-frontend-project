@@ -1,57 +1,57 @@
 <app-header></app-header>
 
-    <div class="container-fluid">
-      <div class="main-content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">User Profile</h4>
-                  <p class="card-category">Detail your profile</p>
-                </div>
-                <div class="card-body">
+<!--<div class="container-fluid">-->
+<!--  <div class="main-content">-->
+<div class="container-fluid">
+  <!--      <div class="row">-->
+  <!--        <div class="col-md-12">-->
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">User Profile</h4>
+      <p class="card-category">Detail your profile</p>
+    </div>
+    <div class="card-body">
 
-                  <form>
-                    <div class="col-md-6 offset-md-3 ">
-                      <div class="profile-card">
-                        <img [src]="user.avatarUrl"/>
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> User Name: </b></label> {{ user.username }}
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> Email: </b></label> {{ user.email }}
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> First Name: </b></label> {{user.firstName}}
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> Last Name: </b></label> {{user.lastName}}
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> Address: </b></label> {{user.address}}
-                      </div>
-                      <div class="form-group ">
-                        <label class="text-info"> <b> About Account: </b></label> {{user.accountInfo}}
-                      </div>
-                      <div class="row">
-                        <div class="col-md-3">
-                          <a class="btn btn-info" routerLink="/dashboard"> Back </a>
-                        </div>
-                        <div class="col-md-3">
-                          <a class="btn btn-info" routerLink="/user-update"> Update Profile </a>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+      <!--              <form>-->
+      <div class="col-md-6 offset-md-3 ">
+        <div class="profile-card">
+          <img [src]="user.avatarUrl"/>
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> User Name: </b></label> {{ user.username }}
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> Email: </b></label> {{ user.email }}
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> First Name: </b></label> {{user.firstName}}
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> Last Name: </b></label> {{user.lastName}}
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> Address: </b></label> {{user.address}}
+        </div>
+        <div class="form-group ">
+          <label class="text-info"> <b> About Account: </b></label> {{user.accountInfo}}
+        </div>
+        <div class="row">
+          <!--                        <div class="col-md-3">-->
+          <!--                          <a class="btn btn-info" routerLink="/dashboard"> Back </a>-->
+          <!--                        </div>-->
+          <div class="center">
+            <a class="btn btn-info" routerLink="/user-update"> Update Profile </a>
           </div>
         </div>
       </div>
+      <!--              </form>-->
     </div>
-
-
+    <!--            <div class="card-footer">-->
+    <!--            </div>-->
+  </div>
+  <!--        </div>-->
+  <!--      </div>-->
+</div>
+<!--  </div>-->
+<!--</div>-->
 

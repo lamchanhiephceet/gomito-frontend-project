@@ -10,7 +10,6 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class BoardService {
-
   baseUrl = environment.baseUrl;
 
   constructor(private httpClient: HttpClient,
@@ -28,7 +27,7 @@ export class BoardService {
     return this.httpClient.get<GBoard[]>(this.baseUrl + 'api/users/' + id);
   }
 
-  getBoardInfo(boardId: number): Observable<GBoard> {
+  getBoardInfo(boardId: any): Observable<GBoard> {
     return this.httpClient.get<GBoard>(this.baseUrl + 'api/boards/' + boardId + '/getInfo');
   }
 

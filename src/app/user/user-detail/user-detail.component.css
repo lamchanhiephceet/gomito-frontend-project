@@ -1,3 +1,17 @@
+.container-fluid,.card {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 3%;
+  bottom: 0%;
+  right: 0;
+  overflow: hidden; /* or auto or scroll */
+}
+
 .profile-card {
   text-align: center;
   padding: 5px;
@@ -15,3 +29,11 @@
   font-weight: bold;
 }
 
+.center {
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

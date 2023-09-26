@@ -74,7 +74,7 @@ export class ExcelReportComponent implements OnInit {
 
           const contentDispositionHeader = response.headers.get('Content-Disposition');
           const fileNameFromHeader = contentDispositionHeader?.split('filename=')[1];
-          console.log(fileNameFromHeader);
+          // console.log(fileNameFromHeader);
           const fileName = 'boards_detail.xlsx';
           const finalFileName = fileNameFromHeader || fileName ;
 
