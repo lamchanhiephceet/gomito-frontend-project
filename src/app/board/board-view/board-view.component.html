@@ -27,13 +27,15 @@
     <!--      Tính năng lọc card theo label-->
     <button mat-icon-button class="example-icon"
             aria-label="Example icon-button with share icon">
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
       <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      </a>
     </button>
 
     <!--      Hiện danh sách các label và thêm mới label -->
     <button mat-icon-button class="example-icon" (click)="drawer.toggle()"
             aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+      <mat-icon>label</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
