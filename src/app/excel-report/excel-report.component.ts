@@ -6,6 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {saveAs} from 'file-saver';
 import {MatSort, Sort} from '@angular/material/sort';
+import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -43,8 +44,6 @@ export class ExcelReportComponent implements OnInit {
         // tslint:disable-next-line:triple-equals
         if (response.status === 200){
           this.dataSource.data = response.body as ExcelReport[];
-          // console.log(this.dataSource.data);
-          // console.log(response.body);
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
         }else{
@@ -62,22 +61,12 @@ export class ExcelReportComponent implements OnInit {
     this.boardService
       .downLoadFile()
       .subscribe((response) => {
-          // const url = URL.createObjectURL(response);
-          //
-          // const a = document.createElement('a');
-          // a.href = url;
-          // a.download = `boards_detail.xlsx`;
-          // a.click();
-          //
-          // URL.revokeObjectURL(url);
-          // a.remove();
-
           const contentDispositionHeader = response.headers.get('Content-Disposition');
           const fileNameFromHeader = contentDispositionHeader?.split('filename=')[1];
-          // console.log(fileNameFromHeader);
-          const fileName = 'boards_detail.xlsx';
-          const finalFileName = fileNameFromHeader || fileName ;
-
+          const currentDateTime = formatDate(new Date(), 'yyyyMMdd_hhmmss', 'en_US');
+          const fileName = 'boards_' + currentDateTime + '.xlsx';
+          let finalFileName;
+          fileNameFromHeader != null ? finalFileName = fileNameFromHeader : finalFileName = fileName;
           const blob = response.body;
           saveAs(blob, finalFileName);
         },
