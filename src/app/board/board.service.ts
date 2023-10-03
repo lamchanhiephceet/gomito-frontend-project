@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {Route, Router} from '@angular/router';
 import {GBoard} from '../models/gboard';
 import {environment} from '../../environments/environment';
+import {GUser} from '../user/GUser';
 
 @Injectable({
   providedIn: 'root'
@@ -41,4 +42,8 @@ export class BoardService {
     // const id = this.localStorage.retrieve('userId');
     return this.httpClient.get(this.baseUrl + 'api/boards/excel-info', {observe: 'response'});
   }
+
+  // searchMember(search: string): Observable<GUser> {
+  //   return this.httpClient.get<GUser>(this.baseUrl + 'api/cards/searches/' + search);
+  // }
 }

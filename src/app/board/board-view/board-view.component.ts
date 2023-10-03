@@ -39,6 +39,7 @@ export class BoardViewComponent implements OnInit {
   boardId: number;
   boardName: string;
   private messageUsername: string;
+  search: string;
 
   constructor(public create: MatDialog,
               private route: ActivatedRoute,
@@ -65,8 +66,10 @@ export class BoardViewComponent implements OnInit {
     this.filterLabels = [];
     this.filterMembers = [];
     this.listMembers = [];
-    this.getLabel();
     this.getAllMembers(this.boardId);
+    this.getLabel();
+    this.search = '';
+    this.cards = [];
   }
 
   // tslint:disable-next-line:typedef
@@ -513,5 +516,19 @@ export class BoardViewComponent implements OnInit {
     }, err => {
       throwError(err);
     });
+  }
+
+  searchCard(name: string): void {
+    const $this = this;
+    $this.cardService.searchCard(name).subscribe(data => {
+      $this.cards = data;
+      console.log('check search');
+      console.log($this.cards);
+    });
+  }
+
+  reviewSearchData(card: GCard): void {
+    this.router.navigate(['/board/' + card.boardId], {queryParams: {cardId: card.cardId}});
+    console.log('ok');
   }
 }

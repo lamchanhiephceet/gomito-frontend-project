@@ -26,4 +26,8 @@ export class UserService {
   updateUserAvatar(user: GUser): Observable<GUser> {
     return this.http.put<GUser>(this.baseUrl + 'api/users/updateAvatar', user);
   }
+
+  // searchMember(boardId: number, search: string): Observable<GUser[]> {
+  //   return this.http.get<GUser[]>(this.baseUrl + 'api/users/search/' + boardId + '/' + search);
+  // }
 }

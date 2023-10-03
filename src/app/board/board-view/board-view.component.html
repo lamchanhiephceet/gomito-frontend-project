@@ -94,7 +94,26 @@
 
   <!--Display labels-->
   <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
-    <h3>Search cards by label and member</h3>
+<!--    <h3>Search cards by label and member</h3>-->
+<!--    <mat-form-field appearance="outline" fxFlex="200px">-->
+<!--      <mat-icon matPrefix>search</mat-icon>-->
+
+      <input matInput placeholder="Search"
+             class="search" name="searchText" [(ngModel)]="search" [matMenuTriggerFor]="menus"
+             (input)="searchCard(search)">
+
+      <mat-menu #menus="matMenu">
+        <div class="search-menu" (click)="stopPropagation($event)">
+          <div *ngFor="let result of cards" class="label-result" fxLayout="row">
+            <mat-card  class="result-name" (click)="reviewSearchData(result)">{{result.cardName}}</mat-card>
+            <div class="result-description">
+              {{result.description}}
+            </div>
+          </div>
+        </div>
+      </mat-menu>
+
+<!--    </mat-form-field>-->
     <mat-divider></mat-divider>
     <tr *ngFor="let label of labels">
       <mat-button-toggle class="show-label" [style]="{'background-color': label.color}" (click)="filterByLabelAndMember(label, null)">{{label.labelName}}</mat-button-toggle>
